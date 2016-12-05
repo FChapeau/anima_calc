@@ -42,4 +42,4 @@ gulp.task("watch:app", function(){
     })
 });
 
-gulp.task('start:dev', ['watch:client', 'watch:app']);
+gulp.task('watch', ['watch:client', 'watch:app']);
