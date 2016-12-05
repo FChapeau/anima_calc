@@ -35,10 +35,15 @@ gulp.task("watch:client", function(){
 });
 
 gulp.task("watch:app", function(){
-    return nodemon({
+    var stream = nodemon({
         script: './app.js',
         ext: 'js',
         ignore: ["client/*", "public/*"]
+    });
+
+    stream
+        .on('crash', function(){
+        stream.emit('restart', 10);
     })
 });
 
