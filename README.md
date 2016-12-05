@@ -14,6 +14,6 @@ La tâche Gulp `watch` démarre Webpack en mode Watch pour compiler le front-end
 |Tâche|Description|
 |---|---|
 |**compile:client**|Roule Webpack|
-|**start:dev**|Démarre les tâches `watch:client` et `watch:app`|
+|**watch**|Démarre les tâches `watch:client` et `watch:app`|
 |**watch:client**|Roule Webpack en mode Watch|
 |**watch:app**|Roule l'application avec Nodemon|
