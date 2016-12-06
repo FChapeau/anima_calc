@@ -17,7 +17,7 @@ class App extends React.Component {
 
     handleChange(event){
         let nextState = this.state;
-        nextState[event.target.name] = event.target.value || 0;
+        nextState[event.target.name] = event.target.value;
         this.setState(nextState);
     }
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     }
 
     calculateDamage(damage, percent){
-        return damage*percent/100;
+        return Math.floor(damage*percent/100);
     }
 
     calculateCounterAttack(attack,defense){
@@ -63,10 +63,10 @@ class App extends React.Component {
         return (
             <div className="dmgForm">
               <div className="sentence">
-                  <p><label>Pour un résultat d'attaque de </label><input type="text" value={this.state.attack} name="attack" onChange={this.handleChange}/>,</p>
-                  <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="text" onChange={this.handleChange}/>,</p>
-                  <p><label>un IP de </label><input name="ip" type="text" value={this.state.ip} onChange={this.handleChange}/></p>
-                  <p><label>et un dégat d'arme de </label><input name="damage" value={this.state.damage} type="text" onChange={this.handleChange}/>,</p>
+                  <p><label>Pour un résultat d'attaque de </label><input type="number" value={this.state.attack} name="attack" onChange={this.handleChange}/>,</p>
+                  <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="number" onChange={this.handleChange}/>,</p>
+                  <p><label>un IP de </label><input name="ip" type="number" value={this.state.ip} onChange={this.handleChange}/></p>
+                  <p><label>et un dégat d'arme de </label><input name="damage" value={this.state.damage} type="number" onChange={this.handleChange}/>,</p>
               </div>
               <div className="result">
                 {this.lastSentence(this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip))}
