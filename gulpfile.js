@@ -1,3 +1,4 @@
+"use strict";
 let gulp = require('gulp');
 let webpack = require('webpack-stream');
 let nodemon = require('gulp-nodemon');

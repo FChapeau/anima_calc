@@ -39,18 +39,18 @@ class App extends React.Component {
 
             if (margin >= 0) {
                 return (
-                    <p>l'attaque touche mais ne fait aucun dégat.</p>
+                    <p className="noDmg">l'attaque touche mais ne fait aucun dégat.</p>
                 )
             }
             else {
                 return (
-                    <p>le défenseur a droit à une contre-attaque avec un bonus de +{this.calculateCounterAttack(this.state.attack, this.state.defense)}</p>
+                    <p className="counter">le défenseur a droit à une contre-attaque avec un bonus de +{this.calculateCounterAttack(this.state.attack, this.state.defense)}</p>
                 )
             }
         }
         else if (percent > 0) {
             return (
-                <p>les dégats sont de {this.calculateDamage(this.state.damage, this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip)) + " "}
+                <p className="showDmg">les dégats sont de {this.calculateDamage(this.state.damage, this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip)) + " "}
                 ({this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip)}% des dégats de l'arme).</p>
             );
         }
@@ -61,12 +61,16 @@ class App extends React.Component {
 
     render(){
         return (
-            <div>
-                <p><label>Pour un résultat d'attaque de </label><input type="text" value={this.state.attack} name="attack" onChange={this.handleChange}/>,</p>
-                <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="text" onChange={this.handleChange}/>,</p>
-                <p><label>un IP de </label><input name="ip" type="text" value={this.state.ip} onChange={this.handleChange}/></p>
-                <p><label>et un dégat d'arme de </label><input name="damage" value={this.state.damage} type="text" onChange={this.handleChange}/>,</p>
+            <div className="dmgForm">
+              <div className="sentence">
+                  <p><label>Pour un résultat d'attaque de </label><input type="text" value={this.state.attack} name="attack" onChange={this.handleChange}/>,</p>
+                  <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="text" onChange={this.handleChange}/>,</p>
+                  <p><label>un IP de </label><input name="ip" type="text" value={this.state.ip} onChange={this.handleChange}/></p>
+                  <p><label>et un dégat d'arme de </label><input name="damage" value={this.state.damage} type="text" onChange={this.handleChange}/>,</p>
+              </div>
+              <div className="result">
                 {this.lastSentence(this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip))}
+              </div>
             </div>
         );
     }

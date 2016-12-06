@@ -1,0 +1,64 @@
+<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Nova+Script" rel="stylesheet">
+/* --------------
+RESET STYLESHEET
+---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+main, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, small {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body{
+  margin:0;
+}
+
+/* --------------
+STYLE HEAD
+---------------- */
+.banner{
+  padding: 5em 0;
+  display: block;
+  background-image: url(/static/images/banner_image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner h1{
+  text-align: center;
+}
+/* --------------
+STYLE APP
+---------------- */
+.sentence{
+  display: block;
+  width: 15em;
+  margin:auto;
+}
+.dmgForm p{
+  padding-top: 1em;
+  margin: auto;
+  font-family: 'Nova Script', cursive;
+}
+.dmgForm input{
+  width: 3em;
+}
+.result{
+  text-align: center;
+}
+.noDmg{
+  color: brown;
+}
+.counter{
+  color: red;
+}
+.showDmg{
+  color: green;
+}
