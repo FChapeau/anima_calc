@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Nova+Script" rel="stylesheet">
+
 /* --------------
 RESET STYLESHEET
 ---------------- */
@@ -27,7 +27,7 @@ STYLE HEAD
 .banner{
   padding: 5em 0;
   display: block;
-  background-image: url(/static/images/banner_image.jpg);
+  background-image: url("/static/images/banner_image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
