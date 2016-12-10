@@ -64,9 +64,9 @@ class App extends React.Component {
             <div className="dmgForm">
               <div className="sentence">
                   <p><label>Pour un résultat d'attaque de </label><input type="number" value={this.state.attack} name="attack" onChange={this.handleChange}/>,</p>
-                  <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="number" onChange={this.handleChange}/>,</p>
-                  <p><label>un IP de </label><input name="ip" type="number" value={this.state.ip} onChange={this.handleChange}/></p>
-                  <p><label>et un dégat d'arme de </label><input name="damage" value={this.state.damage} type="number" onChange={this.handleChange}/>,</p>
+                  <p><label>un dégat d'arme de </label><input name="damage" value={this.state.damage} type="number" onChange={this.handleChange}/>,</p>
+                  <p><label>un résultat de défense de </label><input name="defense" value={this.state.defense} type="number" onChange={this.handleChange}/></p>
+                  <p><label>et un IP de </label><input name="ip" type="number" value={this.state.ip} onChange={this.handleChange}/></p>
               </div>
               <div className="result">
                 {this.lastSentence(this.calculateDamagePercent(this.state.attack, this.state.defense, this.state.ip))}
